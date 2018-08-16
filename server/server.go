@@ -82,12 +82,13 @@ Welcome to Dancing Telnet Server.
     var portPtr = flag.Int("port", 9001, "Port to listen on")
     var addrPtr = flag.String("address", "0.0.0.0", "Address to listen on")
 
+    flag.Parse()
+
     var port = *portPtr
     var addr = *addrPtr
 
     var listenerBuffer bytes.Buffer
 
-    flag.Parse()
 
     listenerBuffer.WriteString(addr)
     listenerBuffer.WriteString(":")
